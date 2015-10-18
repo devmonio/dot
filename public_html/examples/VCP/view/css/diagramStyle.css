@@ -1,0 +1,339 @@
+.ui-tabs .ui-tabs-nav li a {font-size:8pt}
+
+.tabdiv {  
+    margin-top: 2px;  
+    background: #fff;  
+    border: 1px solid #dedbd1;  
+    padding: 1px;  
+}  
+
+#accordion{
+    width: 10%;
+    height: 100%;
+    text-align: left;
+    position: relative;
+}
+
+#canvasContainer{
+    position: fixed;
+    left: 370px;
+    top: 30px;
+}
+
+#listElements{
+    width: 300px;
+}
+#cbDataObjects{
+    width: 220px;
+}
+
+#diagramButton{
+    width: 300px;
+    alignment-adjust: middle;
+}
+
+#gridDetails{
+    position: absolute;
+    width: 360px;
+    /*border: 1px solid #dedbd1;*/
+    left: 2px;
+}
+
+#gridDetails #titleGrid{
+    font-size: 0.74em;
+}
+
+#gridDetails #titleGrid div{
+    float: left;
+    border: 1px solid #dedbd1;
+    font-weight: bold;
+}
+
+#gridDetails #bodyGrid #eachRow{
+    float: left;
+    border: 1px solid #999999;
+}
+
+#gridDetails #bodyGrid #eachRow div{
+    float: left;
+    font-size: 0.65em;
+    border: 1px solid #ffffff;
+}
+
+#cbDataObjects{
+    
+}
+
+#leftBar{
+    position: fixed;
+    height:100%;
+    width:370px;
+    left: 0px;
+    top: 0px;
+}
+
+#tabs{
+    height: 100%;
+}
+#wrapper{
+    height: 98%;
+    width: 99%;
+    position: absolute;
+}
+
+.list{
+    width: 100%;
+    left: 150px;
+    
+}
+
+
+/** toolabars **/
+
+#toolBar{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 375px;
+    height: 35px;
+    border: 1px solid #dedbd1;
+    background-image: linear-gradient(bottom, rgb(255,255,255) 17%, rgb(235,235,235) 96%);
+    background-image: -o-linear-gradient(bottom, rgb(255,255,255) 17%, rgb(235,235,235) 96%);
+    background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 17%, rgb(235,235,235) 96%);
+    background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 17%, rgb(235,235,235) 96%);
+    background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 17%, rgb(235,235,235) 96%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0.17, rgb(255,255,255)),
+            color-stop(0.96, rgb(235,235,235))
+    );
+}
+
+#toolBar .componentToolBar{
+    position: absolute;
+    /*border: 1px solid #999999;*/
+}
+
+#toolBar .componentToolBar .titleComponentToolBar{
+    margin: 0px;
+    width: 80px;
+}
+#toolBar .componentToolBar .titleComponentToolBar p{
+    color: #666666;
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button{
+    cursor: pointer;
+    min-width: 60px;
+    border-radius: 3px;
+}
+
+.button p{
+    color: #666666;
+}
+
+.button:hover{
+    border: 1px solid #ccccff;
+    background: #ccccff;
+    opacity: 0.9;
+}
+
+    /** children tools **/
+    #compenentChildrenToolBar{
+        width: 290px;
+        height: 27px;
+        margin-left: 10px;
+        margin-top: 3px;
+    }
+
+    #btnHideChildren{
+        margin: 0px;
+        padding: 3px 5px;
+    }
+
+    #btnHideChildren p{
+        margin: 0px;
+        text-align: center;
+    }
+
+    #btnShowChildren{
+        margin: 0px;
+        padding: 3px 5px;
+    }
+
+    #btnShowChildren p{
+        margin: 0px;
+        text-align: center;
+    }
+
+    #compenentChildrenToolBar div{
+        margin-left: 10px;
+        float: left;
+    }
+    
+    /** parent tools **/
+    #compenentParentToolBar{
+        width: 290px;
+        height: 27px;
+        margin-left: 240px;
+        margin-top: 3px;
+        /*border: 1px solid #333333;*/
+    }
+
+    #btnHideParents{
+        margin: 0px;
+        padding: 3px 5px;
+    }
+
+    #btnHideParents p{
+        margin: 0px;
+        text-align: center;
+    }
+
+    #btnShowParents{
+        margin: 0px;
+        padding: 3px 5px;
+    }
+
+    #btnShowParents p{
+        margin: 0px;
+        text-align: center;
+    }
+
+    #compenentParentToolBar div{
+        margin-left: 10px;
+        float: left;
+    }
+    
+    
+    /** componenet zoom **/
+    #compenentZoom{
+        width: 390px;
+        height: 27px;
+        margin-left: 450px;
+        margin-top: 3px;
+    }
+
+    #slider-zoom{
+        width: 180px;
+        top: 5px;
+        margin-left: 100px;
+        position: absolute;
+    }
+
+    #zoomValue{
+        position: absolute;
+        width: 80px;
+        margin-left: 300px;
+        top: 3px;
+    }
+    
+    #zoomValue p{
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    
+    #loadingCallServices{
+        position: absolute;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.9);
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+    #loadingCallServices img{
+        margin-left: 49%;
+        margin-top: 200px;
+    }
+    
+    #loadingCallServices p{
+        text-align: center;
+        margin-top: 200px;
+        color: #666666;
+    }
+    
+    #compenentZoomFit{
+        width: 100px;
+        margin-left: 870px;
+        margin-top: 6px;
+    }
+    
+    
+    /** details **/
+    
+    #details{
+        overflow-y: scroll;
+        height: 88%;
+    }
+    
+    #componentNode{
+        /*border: 1px solid #999999;*/
+        width: 340px;
+        margin-left: -18px;
+    }
+    
+    #componentNode .classDetailsNode{
+        margin: 0px;
+        padding: 0px;
+        font-weight: bold;
+        font-size: 0.69em;
+    }
+    
+    #componentNode .classDetailsNode span{
+        font-weight: normal;
+    }
+    
+    /** grid children **/
+    #componentNode .gridTable{
+        position: relative;
+        width: 330px;
+        border: 1px solid #ccccff;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    #componentNode .gridTable .titleGrid{
+        height: 25px;
+        margin: 0px;
+    }
+    
+    #componentNode .gridTable .titleGrid div{
+        float: left;
+        border: 1px solid #ccccff;
+    }
+    
+    #componentNode .gridTable .titleGrid div p{
+        margin: 0px;
+        padding: 3px 6px;
+        font-size: 0.58em;
+        color: #666666;
+    }
+    
+    #componentNode .gridTable .bodyGrid{
+        clear: both;
+    }
+    
+    #componentNode .gridTable .eachElementGrid{
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        /*border: 1px solid #666666;*/
+        height: 25px;
+    }
+    
+    #componentNode .gridTable .eachElementGrid div{
+        margin: 0px;
+        padding: 0px;
+        font-size: 0.55em;
+        float: left;
+    }

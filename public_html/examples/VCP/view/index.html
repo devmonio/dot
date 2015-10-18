@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="css/diagramStyle.css" type="text/css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/net_functions.js"></script>
+        <script type="text/javascript" src="js/paper.js"></script>
+        <script type="text/paperscript" src="js/vcp.js" canvas="myCanvas"></script>
+    </head>
+
+    <body>
+
+        <!-- div loading page-->      
+        <div id="loading" style="cursor:pointer;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;box-shadow:inset orange 0px 0px 2px;background:url(images/ajax-loader.gif) no-repeat center;  background-color:#fff;width:100%;color:#333;text-align:center;height:100%; top:0%;left:0%;padding:52px 12px 12px 12px;position:fixed;z-index:36;"><!--  Loading --></div>
+        <!-- /div loading page -->
+        <div id="loadingCallServices"><img src="images/ajax-loader.gif" /></div>
+        
+        <div id="wrapper">
+            
+            <!-- Tool bar -->
+            <div id="toolBar">
+                <div class="componentToolBar" id="compenentChildrenToolBar">
+                    <div class="titleComponentToolBar"><p>Children</p></div>
+                    <!--<div class="button" id="btnHideChildren"><p>hideChildren</p></div>
+                    <div class="button" id="btnShowChildren"><p>ShowChildren</p></div>-->
+                    <input type="button" id="btnHideChildren" value="hide" />
+                    <input type="button" id="btnShowChildren" value="Show" />
+                </div>
+                <div class="componentToolBar" id="compenentParentToolBar">
+                    <div class="titleComponentToolBar"><p>Parents</p></div>
+                    <!--<div class="button" id="btnHideParents"><p>hideParent</p></div>
+                    <div class="button" id="btnShowParents"><p>ShowParent</p></div>-->
+                    <input type="button" id="btnHideParents" value="hide" />
+                    <input type="button" id="btnShowParents" value="Show" />
+                </div>
+                <div class="componentToolBar" id="compenentZoom">
+                    <div class="titleComponentToolBar"><p>Zoom</p></div>
+                    <div id="slider-zoom"></div>
+                    <div id="zoomValue"><p>Value<span>100%</span></p></div>
+                </div>
+                
+                <div class="componentToolBar" id="compenentZoomFit">
+                    <button id="zoomAll">Zoom Fit</button>
+                </div>
+            </div>
+            
+            <!-- information bar -->
+            <div id="leftBar">
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#dataObjects">Data Objects</a></li>
+                        <li><a href="#details">Details</a></li>
+                        <li><a href="#diagramopts">Diagram Opts</a></li>
+                    </ul>
+
+                    <div class="container" id="dataObjects">
+                        Element:<select id="cbDataObjects" name="combobox" size="1">
+                            <option value="chooseobject">Choose Element</option>
+                            <option value="trunk">Trunk</option>
+<!--                            <option value="menu">Menu</option>
+                            <option value="huntgroup">Hunt Group</option>
+                            <option value="userextension">User Extension</option>
+                            <option value="routepoint">Route Point</option>
+                            <option value="workgroup">Work Group</option>-->
+                        </select>
+                        Schedule:
+                        <select id="cbTimeType" name="comboboxTimeType" size="1">
+                            <option value="1">On-Hours</option>
+                            <option value="2">Off-Hours</option>
+                            <option value="3">Holiday</option>
+                            <option value="4">Custom</option>
+                        </select>
+                        <br>
+                        <div id="dataList">
+                            <select id="listElements" name="comboboxTimeType" size="1">
+                            </select>
+                        </div>
+                        <button id="diagramButton">Digram</button>
+                        
+                    </div>
+                    
+                    <div class="container" id="details">
+                        <div class="component" id="componentNode">
+                            <section id="listDetails"><!-- list details node --></section>
+                            <!-- grid children -->
+                            <p>Children:</p>
+                            <section class="gridTable" id="gridChildrenDetails">
+                                <div class="titleGrid"></div>
+                                <div class="bodyGrid"></div>
+                            </section>
+                            <!-- /grid children -->
+                            <!-- grid parent -->
+                            <p>Parents:</p>
+                            <section class="gridTable" id="gridParentsDetails">
+                                <div class="titleGrid"></div>
+                                <div class="bodyGrid"></div>
+                            </section>
+                            <!-- /grid parent -->
+                        </div>
+                    </div>
+                        
+                    <div class="container" id="diagramopts">
+                    </div>
+                </div>
+            </div>
+                
+            <!-- Diagram canvas -->
+            <div id="canvasContainer">
+                <canvas id="myCanvas" resize></canvas>
+            </div>
+        </div>
+            
+            
+<!--        <div id ="dialog" title="Database Connection">
+            <p>Please enter the Database Information</p>
+            URL: <input id="url" name="URL" value="tfsdev.visi3d.com"/><br/>
+            Database: <input id="database" name="Database" value="shoreware"><br/>
+            UserName: <input id="userName" name="UserName" value="st_configread"><br/>
+            Password: <input type="password" id="password" name="Password" value="passwordconfigread"/><br/>
+            <button id="connect">Connect</button>
+        </div>-->
+                    
+    </body>
+</html>
