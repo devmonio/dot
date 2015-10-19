@@ -5,9 +5,19 @@ var nodePercentageText = 0.05;
 var root = new Node("Project test", new Point(0, 0), nodeDistance * 2);
 
 
+var mousePos = new Point(0,0);
+var lastPClicked;
+var myCanvas = document.getElementById("canvas");
+        
 populateTree(root, 5);
 
 onResize();
+
+if (myCanvas.addEventListener) {
+	myCanvas.addEventListener("wheel", mouseWheelHandler, false);
+}else{ // IE 6/7/8
+
+}
 
 function populateTree(node, levels) {
     var children = randomInt(1, 5);
@@ -31,13 +41,30 @@ function onResize() {
 }
 
 function onMouseDown(event) {
-    console.log(event);
-    if (event.event.button === 0){
-        project._scope.view.center = new Point(event.event.x, event.event.y);
+    if(event.event.button === 1){
+        lastPClicked = event.point;
+    }
+}
+
+function onMouseDrag(event){
+    if(event.event.button === 1){
+        pan(event);
+    }
+}
+
+function onMouseMove(event){
+    mousePos = event.point;
+}
+
+function mouseWheelHandler(event){
+    event.preventDefault();
+    if(event.deltaY < 0){
+        project._scope.view.center = new Point(mousePos.x, mousePos.y);
         project._scope.view.zoom = project._scope.view.zoom + 0.5;
-    }else{
+    }else if(event.deltaY > 0 && project._scope.view.zoom > 0.5){
         project._scope.view.zoom = project._scope.view.zoom - 0.5;
     }
+    console.log(project._scope.view.zoom.toString());
 }
 
 function Node(name, position, size) {
@@ -116,4 +143,9 @@ function calculateDiagramRecursive(node, parent, nodeDistance) {
         calculateDiagramRecursive(child, node, nodeDistance / 2);
     }
     node.updateConections();
+}
+
+function pan(event){
+    var delta = event.point - lastPClicked;
+    view.center = view.center - delta;
 }
